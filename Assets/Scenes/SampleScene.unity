@@ -425,11 +425,11 @@ Transform:
   m_GameObject: {fileID: 87825305}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.05, y: 24.05, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalPosition: {x: 4.21, y: -2.17, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 725811103}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &87825311
 MonoBehaviour:
@@ -781,9 +781,9 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: f72b882253613a34aada99b19269bff8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.449
   m_Pitch: 0.5
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1563,7 +1563,7 @@ GameObject:
   - component: {fileID: 486157226}
   - component: {fileID: 486157225}
   - component: {fileID: 486157224}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tilemap (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14089,6 +14089,9 @@ MonoBehaviour:
   maxSpeed: 10
   jumpForce: 10
   spriteRenderer: {fileID: 490787707}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
   isGrounded: 0
   animator: {fileID: 490787706}
 --- !u!70 &490787703
@@ -14125,7 +14128,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.1}
+  m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.5, y: 1}
   m_Direction: 0
 --- !u!58 &490787704
@@ -14162,7 +14165,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.1}
   m_Radius: 0.5
 --- !u!50 &490787705
 Rigidbody2D:
@@ -15272,7 +15275,7 @@ GameObject:
   - component: {fileID: 584761710}
   - component: {fileID: 584761709}
   m_Layer: 5
-  m_Name: ChatText (1)
+  m_Name: DialougeNo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15790,6 +15793,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1735201920}
   - {fileID: 217873303}
   - {fileID: 2099988289}
   m_Father: {fileID: 0}
@@ -15825,7 +15829,6 @@ Transform:
   m_Children:
   - {fileID: 1636132975}
   - {fileID: 1422317138}
-  - {fileID: 87825310}
   - {fileID: 1552671902}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15842,7 +15845,7 @@ GameObject:
   - component: {fileID: 775670164}
   - component: {fileID: 775670163}
   m_Layer: 5
-  m_Name: ChatText (2)
+  m_Name: DialougeYes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16135,7 +16138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textBox: {fileID: 2080580646}
-  nextButton: {fileID: 1354683710}
+  nextButton: {fileID: 0}
   dialogue:
   - Hi!
   - is this working?
@@ -16169,6 +16172,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1354683707}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1354683707}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -24586,7 +24601,6 @@ GameObject:
   - component: {fileID: 1735201917}
   - component: {fileID: 1735201916}
   - component: {fileID: 1735201921}
-  - component: {fileID: 1735201922}
   m_Layer: 0
   m_Name: MusicCollider
   m_TagString: Untagged
@@ -24760,12 +24774,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735201915}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.42, y: -2.46, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -37.1, y: 22.6, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 725371882}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1735201921
 MonoBehaviour:
@@ -24781,103 +24795,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music: {fileID: 217873304}
   AmbienceGameObject: {fileID: 2099988290}
---- !u!82 &1735201922
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1735201915}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -2303259523932712985, guid: 508daaba878b37b40ba938e94e4ec578, type: 2}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &1735237351
 GameObject:
   m_ObjectHideFlags: 0
@@ -25875,7 +25792,7 @@ GameObject:
   - component: {fileID: 2041809432}
   - component: {fileID: 2041809431}
   - component: {fileID: 2041809433}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26774,7 +26691,7 @@ GameObject:
   - component: {fileID: 2080580647}
   - component: {fileID: 2080580646}
   m_Layer: 5
-  m_Name: ChatText
+  m_Name: IntroText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26911,7 +26828,7 @@ GameObject:
   - component: {fileID: 2094716543}
   - component: {fileID: 2094716542}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: WorldSpaceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27034,10 +26951,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2303259523932712985, guid: 508daaba878b37b40ba938e94e4ec578, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 69d20103e98f8d04ca2397dc9d188910, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
+  m_PlayOnAwake: 1
+  m_Volume: 0.449
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -27486,6 +27403,7 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 87825310}
   - {fileID: 490787701}
   - {fileID: 725811103}
   - {fileID: 1735237353}
@@ -27495,7 +27413,6 @@ SceneRoots:
   - {fileID: 1756080060}
   - {fileID: 327421531}
   - {fileID: 2061393562}
-  - {fileID: 1735201920}
   - {fileID: 545508659}
   - {fileID: 470344172}
   - {fileID: 1259405110}
