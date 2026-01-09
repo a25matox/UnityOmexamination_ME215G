@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class AudioPlayByMaterial : MonoBehaviour
 {
@@ -12,7 +14,12 @@ public class AudioPlayByMaterial : MonoBehaviour
         Gravel,
         Metal
     }
-    
+
+    private void Start()
+    {
+        PlayerMovement = GetComponent<PlatformerMovement>();
+    }
+
     [System.Serializable]
     public struct AudioType
     {
