@@ -1,3 +1,4 @@
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -29,7 +30,7 @@ public class PlatformerMovement : MonoBehaviour
     private bool jumpInput;
     private bool jumpReleased;
     private bool wasGrounded;
-    private bool isGrounded;
+    public bool isGrounded;
 
     [SerializeField] private Animator animator;
     
@@ -152,6 +153,16 @@ public class PlatformerMovement : MonoBehaviour
         if (controlEnabled)
         {
             moveInput = context.ReadValue<Vector2>().normalized;
+            animator.SetFloat("Move",moveInput.x);
+            if (moveInput.x > 0)
+            {
+                spriteRenderer.flipX = true;
+            }
+            
+            if (moveInput.x < 0)
+            {
+                spriteRenderer.flipX = false;
+            }
         }
         else
         {
