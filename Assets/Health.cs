@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -36,7 +37,7 @@ public class Health : MonoBehaviour
     [Tooltip("Event triggered when this object dies (health is zero)")]
     [SerializeField] UnityEvent OnDie;
 
-    
+    public TextMeshProUGUI Text;
 
     // Awake is called before the first frame update
     void Awake()
@@ -71,12 +72,16 @@ public class Health : MonoBehaviour
             //add healAmount to current health, adjust if health ends up outside of allowed range
             currentHealth += healAmount;
             currentHealth = Mathf.Clamp(currentHealth, minHealth, maxHealth);
-            
+            updateText();
             // call OnHealed action
             OnHealed?.Invoke();
         }
     }
 
+    public void updateText()
+    {
+        Text.text = currentHealth.ToString();
+    }
 
     public void TakeDamage(float damage)
     {
@@ -87,7 +92,7 @@ public class Health : MonoBehaviour
             //apply damage, adjust if health ends up outside of allowed range
             currentHealth -= damage;
             currentHealth = Mathf.Clamp(currentHealth, minHealth, maxHealth); 
-        
+            updateText();
             Debug.Log(currentHealth);
             // call OnDamage action
             OnDamaged?.Invoke();
@@ -99,7 +104,7 @@ public class Health : MonoBehaviour
     public void Kill()
     {
         currentHealth = minHealth;
-
+        updateText();
         // call OnDamage action
         OnDamaged?.Invoke();
         
