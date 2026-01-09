@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -48,6 +49,14 @@ public class ContinuousMovement : MonoBehaviour
     public void StopMovement()
     {
         active = false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            InvertVelocity();
+        }
     }
 
     // Call this if you want to reset the object back to it's start-position
